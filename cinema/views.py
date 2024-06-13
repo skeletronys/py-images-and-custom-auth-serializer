@@ -89,8 +89,6 @@ class MovieViewSet(
         serializer.is_valid(raise_exception=True)
         serializer.save()
 
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
     def get_queryset(self):
         """Retrieve the movies with filters"""
         title = self.request.query_params.get("title")
